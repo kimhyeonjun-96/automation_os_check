@@ -1,0 +1,5 @@
+---
+- name: Check the Network
+  shell: echo `ip a | egrep -i down | awk '{print $2}'`
+  register: downNetwork
+

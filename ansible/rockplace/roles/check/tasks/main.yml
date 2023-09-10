@@ -1,0 +1,21 @@
+---
+# tasks file for check
+- name: Include create directory host file
+  include_vars:
+    file: vars/hosts.yaml
+    name: role_hosts
+
+# - name: Print role host
+#   debug:
+#     var: role_hosts.resource_check_group.db_group
+
+- name: Check SSH Connect
+  wait_for:
+    port: 22
+    delay: 10
+  register: check_ssh
+
+- name: Check OS Version
+  include_tasks: "../../../os/{{ ansible_facts['distribution'] | lower }}{{ ansible_facts['distribution_major_version'] }}_check.yaml"
+  when: check_ssh.state == 'started'
+  ignore_errors: yes

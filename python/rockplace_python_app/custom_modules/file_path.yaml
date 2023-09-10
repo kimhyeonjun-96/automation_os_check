@@ -1,0 +1,7 @@
+# variable file
+config_file: "/opt/rockplace_python_app/custom_modules/file_path.yaml"
+data_home: "/home/is1"
+ansible_home: "/var/lib/awx/projects/rockplace"
+app_home: "/opt/rockplace_python_app"
+
+dir_result: /home/is1/check_the_system_20230704

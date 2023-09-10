@@ -1,0 +1,7 @@
+{
+    "hosts" : [
+        {% for node in groups['all'] %}
+            { "hostinfo":{{ hostvars[node] | to_nice_json}} } {% if loop.index != loop.length%}, {% endif%}
+        {% endfor %}
+    ]
+}

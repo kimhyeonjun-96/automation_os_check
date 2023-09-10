@@ -1,0 +1,5 @@
+---
+- name: check if ntp is in use
+  shell: service ntpd status
+  register: ntpd_status
+  ignore_errors: yes

@@ -1,0 +1,9 @@
+--- 
+- name: check ntp sync
+  block:
+    - name: start check to ntp
+      # shell: /usr/sbin/ntpq -p
+      shell: /usr/sbin/ntpq -p | awk 'NR == 3 {print $1} ' | cut -c 1
+      register: ntp_sync
+      when: ntpd_status['status']['ActiveState'] == 'active'
+  ignore_errors: yes

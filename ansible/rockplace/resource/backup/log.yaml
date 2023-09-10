@@ -1,0 +1,4 @@
+---
+- name: get log
+  shell: cat /var/log/messages* | egrep -i 'error|warn|fail' | grep -v ansible | uniq | sort
+  register: log

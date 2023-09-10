@@ -1,0 +1,8 @@
+--- 
+- name: check chrony sync
+  block:
+    - name: chronyd
+      shell: chronyc sources | awk '{print $1}' | grep *
+      register: chrony_sync
+      when: chronyd_status['status']['ActiveState'] == 'active'
+  ignore_errors: yes

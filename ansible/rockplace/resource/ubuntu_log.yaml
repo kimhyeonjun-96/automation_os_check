@@ -1,0 +1,4 @@
+---
+- name: get log
+  shell: cat /var/log/syslog* | egrep -i "error|fail|warn"
+  register: log

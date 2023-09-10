@@ -1,0 +1,14 @@
+---
+- name: Chek the NTP status
+  include_tasks: redhat7_ntp_status.yaml
+- name: Check the Time with NTP
+  include_tasks: redhat7_ntp.yaml
+  when: ntpd_status['status']['ActiveState'] == 'active'
+  ignore_errors: yes
+
+- name: Chek the Chrony status
+  include_tasks: redhat7_chrony_status.yaml
+- name: Check the Time with Chrony
+  include_tasks: redhat7_chrony.yaml
+  when: chronyd_status['status']['ActiveState'] == 'active'
+  ignore_errors: yes

@@ -1,0 +1,26 @@
+---
+# tasks file for directory
+- name: Include create directory host file
+  include_vars:
+    file: vars/hosts.yaml
+    name: role_hosts
+
+- name: Setting Date
+  shell: "date +%Y%m%d"
+  register: date
+
+- name: Create check directory
+  file:
+    path: "{{ data_home }}/check_the_system_{{ date.stdout }}"
+    state: directory
+    owner: is1
+    group: is1
+    mode: 0770
+  register: dir
+
+- name: Write result path to file_path.yaml
+  lineinfile:
+    path: "{{ config_file }}"
+    regexp: '^dir_result:'
+    line: "dir_result: {{ dir.path }}"
+    state: present

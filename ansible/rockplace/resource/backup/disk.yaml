@@ -1,0 +1,6 @@
+---
+- name: disk
+  debug:
+    msg: "mount.mount"
+    #   msg: "{{ ansible_uptime_seconds  }}"
+  register: disk

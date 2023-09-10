@@ -1,0 +1,4 @@
+- name: check if chrony is in use
+  systemd:
+    name: "chronyd"
+  register: chronyd_status

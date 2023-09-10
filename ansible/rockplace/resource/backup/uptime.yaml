@@ -1,0 +1,6 @@
+---
+- name: uptime
+  debug:
+    msg: "{{ (ansible_uptime_seconds  / 60 / 60 / 24) | int}} day"
+    #   msg: "{{ ansible_uptime_seconds  }}"
+  register: uptime

@@ -1,0 +1,10 @@
+---
+# tasks file for writeData
+- name: reload vars_files
+  include_vars: "/opt/rockplace_python_app/custom_modules/file_path.yaml"
+   
+
+- name: write data
+  template: 
+    src: "../../../check.j2"
+    dest: "{{ dir_result }}/check_result.json"

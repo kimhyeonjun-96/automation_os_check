@@ -1,0 +1,4 @@
+- name: check if ntp is in use
+  systemd:
+    name: "ntpd"
+  register: ntpd_status # ntpd_status['status']['ActiveState'] 

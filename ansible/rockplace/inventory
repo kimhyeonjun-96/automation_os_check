@@ -1,0 +1,5 @@
+[resource_check_group]
+iscsi-target
+rhcs01
+rhcs02
+rhel-test

@@ -1,0 +1,4 @@
+---
+- name: Check the Memory
+  shell: echo `free -m | grep ^Mem | awk '{printf "%.1f%%", (($2-$7)*100)/$2}'`
+  register: memory
