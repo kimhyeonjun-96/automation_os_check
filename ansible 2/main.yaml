@@ -1,0 +1,23 @@
+# 두 개의 플레이북 호출 및 실행
+---
+- name: Start Main
+  hosts: all
+  vars_files:
+    - "/opt/rockplace_python_app/custom_modules/file_path.yaml"
+  tasks:
+    - name: Include directory role
+      include_role:
+         name: directory
+      when: inventory_hostname in groups['master']
+    
+    - name: Include check role
+      include_role:
+        name: check
+      vars:
+        ansible_become: yes
+      when: inventory_hostname in groups['resource_check_group']
+
+    - name: Include writeData role
+      include_role:
+        name: writeData
+      when: inventory_hostname in groups['master']

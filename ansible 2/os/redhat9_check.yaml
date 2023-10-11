@@ -1,0 +1,4 @@
+# - name: RHEL9 Check the Memory
+#   include_tasks: "{{ create_file_path }}/resource/redhat7_mem.yaml"
+# - name: hostname
+#   include_tasks: "{{ create_file_path }}/resource/hostname.yaml"

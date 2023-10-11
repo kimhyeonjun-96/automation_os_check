@@ -1,0 +1,4 @@
+---
+- name: zombie check
+  shell: echo `ps -ef | grep -i defunct | grep -v grep`
+  register: zombie

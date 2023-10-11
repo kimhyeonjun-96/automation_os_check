@@ -1,0 +1,6 @@
+---
+- name: Check the NTP
+  shell: ntpq -p  | awk 'NR == 3 {print $1}' | cut -c 1
+  register: ntp_sync
+  when: ntpd_status.stdout_lines[0].split( )[2][0:5] != ''
+  ignore_errors: yes

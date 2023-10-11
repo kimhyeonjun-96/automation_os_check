@@ -1,0 +1,10 @@
+# variable file
+# 자동화 설정파일
+        # config_file : 설정파일의 절대 경로
+        # data_home : json, excel파일같이 점검결과 문서들이 저장되는 상위 디렉토리 경로
+        # dir_result : json, excel파일같이 점검결과 문서들이 저장되는 절대경로
+config_file: "/opt/rockplace_python_app/custom_modules/file_path.yaml"
+data_home: "/home/rockauto"
+#ansible_home: "/var/lib/awx/projects/rockplace"
+#app_home: "/opt/rockplace_python_app"
+dir_result: /home/rockauto/check_the_system_20230927

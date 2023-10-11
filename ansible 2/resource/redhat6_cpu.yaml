@@ -1,0 +1,5 @@
+---
+- name: cpu
+  shell: top -b -n1 | grep -w id | cut -d ',' -f 4 | awk '{print 100-$1}'
+  register: cpu
+

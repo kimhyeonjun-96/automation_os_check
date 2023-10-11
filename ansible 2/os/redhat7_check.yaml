@@ -1,0 +1,14 @@
+- name: cpu
+  include_tasks: "../resource/redhat7_cpu.yaml"
+- name: memory
+  include_tasks: "../resource/redhat7_mem.yaml"
+- name: time Sync
+  include_tasks: "../resource/rhel7_time.yaml"
+- name: network
+  include_tasks: "../resource/network.yaml"
+- name: zombie
+  include_tasks: "../resource/zombie.yaml"
+- name: uptime
+  include_tasks: "../resource/uptime.yaml"
+- name: log
+  include_tasks: "../resource/log.yaml"

@@ -1,0 +1,14 @@
+- name: cpu
+  include_tasks: "{{ create_file_path }}/resource/redhat7_cpu.yaml"
+- name: memory
+  include_tasks: "{{ create_file_path }}/resource/redhat7_mem.yaml"
+- name: time Sync
+  include_tasks: "{{ create_file_path }}/resource/rhel7_time.yaml"
+- name: network
+  include_tasks: "{{ create_file_path }}/resource/network.yaml"
+- name: zombie
+  include_tasks: "{{ create_file_path }}/resource/zombie.yaml"
+- name: log
+  include_tasks: "{{ create_file_path }}/resource/log.yaml"
+- name: top5
+  include_tasks: "{{ create_file_path }}/resource/top5.yaml"

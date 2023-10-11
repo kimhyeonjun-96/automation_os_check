@@ -1,0 +1,5 @@
+---
+- name: os version
+  debug:
+    msg: "{{ ansible_distribution_version }}"
+  register: version

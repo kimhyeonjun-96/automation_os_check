@@ -1,0 +1,4 @@
+---
+- name: top 5 cpu usage
+  shell: top -b -n 1 | head -n 12 | tail -5
+  register: top5

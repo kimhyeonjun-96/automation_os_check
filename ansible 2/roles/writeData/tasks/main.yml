@@ -1,0 +1,13 @@
+---
+# tasks file for writeData
+#- name: Include create directory host file
+#  include_vars:
+#    file: vars/hosts.yaml
+#    name: role_hosts
+- name: reload vars file
+  include_vars: "/opt/rockplace_python_app/custom_modules/file_path.yaml"
+
+- name: write data
+  template: 
+    src: "../../../check.j2"
+    dest: "{{ dir_result }}/check_result.json"

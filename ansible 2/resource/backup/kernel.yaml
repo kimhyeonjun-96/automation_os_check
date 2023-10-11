@@ -1,0 +1,6 @@
+---
+- name: kernel
+  debug:
+    msg: "{{ ansible_kernel }}"
+    #   msg: "{{ ansible_uptime_seconds  }}"
+  register: kernel

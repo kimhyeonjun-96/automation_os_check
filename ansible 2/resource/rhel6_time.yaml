@@ -1,0 +1,13 @@
+---
+- name: Chek the NTP status
+  include_tasks: redhat6_ntp_status.yaml
+
+- name: print 6 Version ntpd_status
+  debug:
+    var: ntpd_status.stdout_lines[0].split( )[2][0:5]
+  ignore_errors: yes
+  
+- name: Check the Time with NTP
+  include_tasks: redhat6_ntp.yaml
+  when: ntpd_status.stdout_lines[0].split( )[2][0:5] != ' '
+  ignore_errors: yes

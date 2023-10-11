@@ -1,0 +1,5 @@
+---
+- name: hostname
+  debug:
+    msg: "{{ ansible_hostname }}"
+  register: hostname

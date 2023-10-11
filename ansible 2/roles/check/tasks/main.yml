@@ -1,0 +1,12 @@
+---
+# tasks file for check
+- name: Check SSH Connect
+  wait_for:
+    port: 22
+    delay: 5
+  register: check_ssh
+
+- name: Check OS Version
+  include_tasks: "../../../os/{{ ansible_facts['distribution'] | lower }}{{ ansible_facts['distribution_major_version'] }}_check.yaml"
+  when: check_ssh.state == 'started'
+  ignore_errors: yes
